@@ -1,68 +1,50 @@
 layout: {zmk_keyboard: temper}
 layers:
   DEFAULT:
-  - - Q
-    - W
-    - E
-    - R
-    - T
-    - Y
-    - U
-    - I
-    - O
-    - {t: P, s: '$$mdi:clipboard-check-outline$$'}
+  - [Q, W, E, R, T, Y, U, I, O, P]
   - - A
     - {t: S, h: '$$mdi:apple-keyboard-command$$'}
-    - {t: D, h: '$$mdi:apple-keyboard-control$$'}
-    - {t: F, h: '$$mdi:apple-keyboard-shift$$'}
-    - G
-    - {t: H, s: '$$mdi:magnify$$'}
-    - {t: J, h: '$$mdi:apple-keyboard-shift$$'}
-    - {t: K, h: '$$mdi:apple-keyboard-control$$'}
+    - {t: D, h: LALT}
+    - {t: F, h: LCTRL}
+    - {t: G, h: LSHFT}
+    - {t: H, h: RSHFT}
+    - {t: J, h: RCTRL}
+    - {t: K, h: '$$mdi:apple-keyboard-option$$'}
     - {t: L, h: '$$mdi:apple-keyboard-command$$'}
     - {t: ;, s: ':'}
-  - - {t: Z, s: '$$mdi:apple-keyboard-caps$$'}
-    - {t: X, s: '$$mdi:content-cut$$'}
-    - {t: C, s: '$$mdi:content-copy$$'}
-    - {t: V, s: '$$mdi:content-paste$$'}
+  - - {t: Z, h: LSHFT}
+    - {t: X, h: LALT}
+    - {t: C, h: LCTRL}
+    - {t: V, h: '$$mdi:apple-keyboard-command$$'}
     - B
     - N
-    - M
-    - {t: ',', s: <}
-    - {t: ., s: '>'}
+    - {t: M, h: '$$mdi:apple-keyboard-option$$'}
+    - {t: ',', h: RCTRL, s: <}
+    - {t: ., h: RGUI, s: '>'}
     - {t: /, s: '?'}
-  - - {t: '$$mdi:keyboard-tab$$', h: Hyper}
-    - {t: '$$mdi:backspace-reverse-outline$$', h: NUM, type: hold-tap}
-    - TAB
+  - - $$mdi:apple-keyboard-command$$
+    - {t: TAB, h: SYMBOLS}
     - SPACE
-    - {t: '$$mdi:backspace$$', h: SYM, type: hold-tap}
-    - {t: '$$mdi:keyboard-esc$$', h: Hyper}
-  NUM:
+    - ENTER
+    - {t: BSPC, h: NAV}
+    - ''
+  SYMBOLS:
   - [Nvim WQ, _, '#', $, '@', +, '7', '8', '9', '*']
   - ['', '~', '`', '%', '!', '-', '4', '5', '6', /]
   - [Nvim Q!, \, '|', '&', ^, '0', '1', '2', '3', '=']
   - - $$mdi:apple-keyboard-command$$
-    - {t: ▽, type: trans}
+    - {type: held}
     - {t: ▽, type: trans}
     - {t: ., s: '$$mdi:keyboard-space$$'}
     - {t: ▽, type: trans}
     - $$mdi:apple-keyboard-option$$
-  SYM:
-  - - '""'
-    - <
-    - '>'
-    - '{'
-    - '}'
-    - {t: '$$mdi:menu-left$$', s: '$$mdi:mouse$$'}
-    - $$mdi:mouse-move-down$$
-    - $$mdi:mouse-move-up$$
-    - {t: '$$mdi:menu-right$$', s: '$$mdi:mouse$$'}
-    - {t: '$$mdi:pan-up$$', s: '$$mdi:mouse-scroll-wheel$$'}
-  - ['"', '[', ']', (, ), '$$mdi:arrow-left-bold$$', '$$mdi:arrow-down-bold$$', '$$mdi:arrow-up-bold$$', '$$mdi:arrow-right-bold$$', '$$mdi:keyboard-settings$$']
-  - - ''''
-    - $$mdi:play-pause$$
+  NAV:
+  - [<, '>', '{', '}', '[', PGUP, HOME, '$$mdi:arrow-up-bold$$', END, PGDN]
+  - [(, ), '[', ']', '"', '$$mdi:arrow-left-bold$$', '$$mdi:arrow-down-bold$$', '$$mdi:arrow-up-bold$$', '$$mdi:arrow-right-bold$$', '''']
+  - - $$mdi:play-pause$$
     - $$mdi:volume-off$$
     - $$mdi:volume-low$$
+    - $$mdi:volume-high$$
     - $$mdi:volume-high$$
     - $$mdi:mouse-left-click-outline$$
     - $$mdi:mouse-right-click-outline$$
@@ -73,9 +55,9 @@ layers:
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
+    - {type: held}
     - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-  FUNC:
+  MISC:
   - ['$$mdi:bluetooth-off$$', '$$mdi:bluetooth-transfer$$', '$$mdi:bluetooth-transfer$$', Boot, Reset, Reset, Boot, '', '', '']
   - - F11
     - F12
@@ -89,30 +71,36 @@ layers:
     - ''
   - [F1, F2, F3, F4, F5, F6, F7, F8, F9, F10]
   - - {t: ▽, type: trans}
+    - {type: held}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
+    - {type: held}
     - {t: ▽, type: trans}
 combos:
 - p: [1, 2]
   k: <>
-  l: [SYM]
+  l: [NAV]
 - p: [3, 4]
   k: '{}'
-  l: [SYM]
+  l: [NAV]
 - p: [13, 14]
   k: ()
-  l: [SYM]
+  l: [NAV]
 - p: [11, 12]
   k: '[]'
-  l: [SYM]
+  l: [NAV]
 - p: [25, 26]
   k: $$mdi:mouse-scroll-wheel$$
-  l: [SYM]
+  l: [NAV]
 - p: [23, 24]
   k: $$mdi:skip-next$$
-  l: [SYM]
+  l: [NAV]
 - p: [21, 22]
   k: $$mdi:skip-previous$$
-  l: [SYM]
+  l: [NAV]
+- p: [16, 17]
+  k: ESC
+- p: [18, 19]
+  k: ''''
+- p: [11, 12]
+  k: '&osm LSHFT'
