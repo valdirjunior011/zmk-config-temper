@@ -13,9 +13,9 @@
 #include <dt-bindings/zmk/reset.h>
 
 #define DEFAULT 0
-#define NUM 1
-#define SYM 2
-#define FUNC 3
+#define SYMBOLS 1
+#define NAV 2
+#define MISC 3
 
 #define ______ &trans
 
@@ -28,8 +28,8 @@
     conditional_layers {
         compatible = "zmk,conditional-layers";
         tri_layer {
-            if-layers = <NUM SYM>;
-            then-layer = <FUNC>;
+            if-layers = <SYMBOLS NAV>;
+            then-layer = <MISC>;
         };
     };
     behaviors {
@@ -118,52 +118,70 @@
         lt_gt_combo {
             timeout-ms = <50>;
             key-positions = <1 2>;
-            layers = <SYM>;
+            layers = <NAV>;
             bindings = <&lt_gt_macro>;
          };
         // Combo to type { } and move cursor left
         lb_rb_combo {
             timeout-ms = <50>;
             key-positions = <3 4>;
-            layers = <SYM>;
+            layers = <NAV>;
             bindings = <&lb_rb_macro>;
         };
         // Combo to type ( ) and move cursor left
         lp_rp_combo {
             timeout-ms = <50>;
             key-positions = <13 14>;
-            layers = <SYM>;
+            layers = <NAV>;
             bindings = <&lp_rp_macro>;
         };
         // Combo to type [ ] and move cursor left
         ls_rs_combo {
             timeout-ms = <50>;
             key-positions = <11 12>;
-            layers = <SYM>;
+            layers = <NAV>;
             bindings = <&ls_rs_macro>;
         };
         // Combo to press the middle mouse button
         mmb_combo {
             timeout-ms = <50>;
             key-positions = <25 26>;
-            layers = <SYM>;
+            layers = <NAV>;
             bindings = <&mkp MCLK>;
         };
         // Combo to go Next
         next_combo {
             timeout-ms = <50>;
             key-positions = <23 24>;
-            layers = <SYM>;
+            layers = <NAV>;
             bindings = <&kp C_NEXT>;
         };
-        // Combo to go Previous
-        prev_combo {
-            timeout-ms = <50>;
-            key-positions = <21 22>;
-            layers = <SYM>;
-            bindings = <&kp C_PREV>;
-        };
-     };
+         // Combo to go Previous
+         prev_combo {
+             timeout-ms = <50>;
+             key-positions = <21 22>;
+             layers = <NAV>;
+             bindings = <&kp C_PREV>;
+         };
+         // Combo for ESC (J + K)
+         esc_combo {
+             timeout-ms = <50>;
+             key-positions = <16 17>;
+             bindings = <&kp ESC>;
+         };
+         // Combo for apostrophe (L + ;)
+         apostrophe_combo {
+             timeout-ms = <50>;
+             key-positions = <18 19>;
+             bindings = <&kp SQT>;
+         };
+         // Combo for shift (S + D)
+         shift_combo {
+             timeout-ms = <50>;
+             key-positions = <11 12>;
+             bindings = <&osm LSHFT>;
+         };
+      };
 
     macros {
         // Macro to exit vim: ESC : W Q
@@ -230,18 +248,18 @@
             label = "DEFAULT";
             bindings = <
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-        &kp Q       &kp W         &kp E          &kp R          &kp T             &kp Y         &kp U         &kp I         &kp O       &app_paste
+        &kp Q       &kp W         &kp E          &kp R          &kp T             &kp Y         &kp U         &kp I         &kp O         &kp P
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-        &kp A       &hm LGUI S   &hm LCTRL D     &hm LSHFT F    &kp G         &search_dance     &hm RSHFT J   &hm RCTRL K   &hm RGUI L    &kp SEMI
+        &kp A       &hm LGUI S   &hm LALT D     &hm LCTRL F    &hm LSHFT G       &hm RSHFT H   &hm RCTRL J   &hm RALT K    &hm RGUI L    &kp SEMI
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-    &caps_dance    &cut_dance      &copy_dance    &paste_dance    &kp B           &kp N         &kp M         &kp COMMA     &kp DOT       &kp FSLH
+        &tp LSHFT Z &tp LALT X   &tp LCTRL C    &tp LGUI V     &kp B             &kp N         &tp RALT M    &tp RCTRL COMMA &tp RGUI DOT  &kp FSLH
 // ╰─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯
-                    &tp LG(LC(LA(LSHFT))) TAB  &lt NUM DEL    &kp TAB          &kp SPACE   &lt SYM BSPC  &tp LG(LC(LA(LSHFT))) ESC
+                    &kp LGUI     &lt SYMBOLS TAB  &kp SPACE                      &kp ENTER     &lt NAV BSPC    &none
 //                             ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
             >;
         };
-        num_layer {
-            label = "NUM";
+        symbols_layer {
+            label = "SYMBOLS";
             bindings = <
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
        &vim_wq     &kp UNDER     &kp HASH      &kp DLLR     &kp AT            &kp PLUS       &kp N7        &kp N8       &kp N9       &kp STAR
@@ -254,23 +272,23 @@
 //                             ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
             >;
         };
-        sym_layer {
-            label = "SYM";
+        nav_layer {
+            label = "NAV";
             bindings = <
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-      &dq_macro      &kp LT       &kp GT         &kp LBRC      &kp RBRC        &mmv MOVE_LEFT  &mmv MOVE_DOWN &mmv MOVE_UP  &mmv MOVE_RIGHT  &msc SCRL_UP
+       &kp LT       &kp GT       &kp LBRC      &kp RBRC      &kp LBKT        &kp PGUP       &kp HOME      &kp UP        &kp END       &kp PGDN
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-      &kp DQT      &kp LBKT     &kp RBKT       &kp LPAR      &kp RPAR          &kp LEFT        &kp DOWN     &kp UP       &kp RIGHT     &homeapp
+       &kp LPAR    &kp RPAR     &kp LBKT      &kp RBKT      &kp DQT          &kp LEFT       &kp DOWN      &kp UP        &kp RIGHT     &kp SQT
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-      &kp SQT     &kp C_PP     &kp C_MUTE  &kp C_VOL_DN   &kp C_VOL_UP         &mkp LCLK      &mkp RCLK     &kp LG(LEFT)  &kp LG(RIGHT)  &msc SCRL_DOWN
+       &kp C_PP    &kp C_MUTE   &kp C_VOL_DN  &kp C_VOL_UP  &kp C_VOL_UP     &mkp LCLK      &mkp RCLK     &kp LG(LEFT)  &kp LG(RIGHT) &msc SCRL_DOWN
 // ╰─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯
-                                   ______       ______        ______             ______        ______        ______
+                                    ______       ______        ______             ______        ______        ______
 //                             ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
             >;
         };
 
-        func_layer {
-            label = "FUNC";
+        misc_layer {
+            label = "MISC";
             bindings = <
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
      &bt BT_CLR    &bt BT_NXT    &bt BT_PRV    &bootloader   &sys_reset       &sys_reset    &bootloader    &none         &none         &none
