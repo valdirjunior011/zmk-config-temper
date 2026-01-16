@@ -1,10 +1,10 @@
 manifest:
   version: 0.8
   remotes:
-    - name: zmk
-      url: https://github.com/zmkfirmware/zmk
+    - name: zmkfirmware
+      url-base: https://github.com/zmkfirmware
     - name: mctechnology17
-      url: https://github.com/mctechnology17
+      url-base: https://github.com/mctechnology17
   projects:
     - name: zmk
       remote: zmk
