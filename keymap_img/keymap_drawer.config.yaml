@@ -103,6 +103,7 @@ parse_config:
     "&ls_rs_macro": "[]"
     "&vim_wq": "Nvim WQ"
     "&vim_q": "Nvim Q!"
+    "&euro": $$mdi:current-eur$$
 
     # Browser navigation
     "&kp LG(LEFT)": $$mdi:arrow-left-bold-box-outline$$

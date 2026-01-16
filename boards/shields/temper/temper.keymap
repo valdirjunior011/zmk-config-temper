@@ -221,6 +221,13 @@
             bindings = <&macro_press &kp RCTRL &kp RALT &kp N0>,
                        <&macro_release &kp N0 &kp RALT &kp RCTRL>;
         };
+        // Macro to type euro marke
+        euro: euro_settings {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings = <&macro_press &kp RSHFT &kp RALT &kp N2>;  
+
+        };
     };
 
     keymap {
@@ -246,7 +253,7 @@
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
        &vim_wq     &kp UNDER     &kp HASH      &kp DLLR     &kp AT            &kp PLUS       &kp N7        &kp N8       &kp N9       &kp STAR
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-       &none     &kp TILDE     &kp GRAVE     &kp PRCNT    &kp EXCL          &kp MINUS      &kp N4        &kp N5       &kp N6       &kp SLASH
+       &euro       &kp TILDE     &kp GRAVE     &kp PRCNT    &kp EXCL          &kp MINUS      &kp N4        &kp N5       &kp N6       &kp SLASH
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
        &vim_q        &kp BSLH      &kp PIPE      &kp AMPS     &kp CARET         &kp N0         &kp N1        &kp N2       &kp N3       &kp EQUAL
 // ╰─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯
