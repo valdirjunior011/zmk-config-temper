@@ -39,7 +39,7 @@ layers:
     - {t: '$$mdi:keyboard-esc$$', h: Hyper}
   NUM:
   - [Nvim WQ, _, '#', $, '@', +, '7', '8', '9', '*']
-  - ['', '~', '`', '%', '!', '-', '4', '5', '6', /]
+  - ['$$mdi:currency-eur$$', '~', '`', '%', '!', '-', '4', '5', '6', /]
   - [Nvim Q!, \, '|', '&', ^, '0', '1', '2', '3', '=']
   - - $$mdi:apple-keyboard-command$$
     - {t: ▽, type: trans}
