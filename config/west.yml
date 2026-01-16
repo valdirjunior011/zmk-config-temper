@@ -1,19 +1,18 @@
 manifest:
+  version: 0.8
   remotes:
-    version: 0.8
-    remotes:
-      - name: zmk
-        url-base: https://github.com/zmkfirmware/zmk
-      - name: mctechnology17
-        url-base: https://github.com/mctechnology17
-    projects:
-      - name: zmk
-        remote: zmk
-        revision: main
-      - name: zmk-nice-oled
-        remote: mctechnology17
-        revision: main
-        path: modules/lib/nice-oled
+    - name: zmk
+      url-base: https://github.com/zmkfirmware/zmk
+    - name: mctechnology17
+      url-base: https://github.com/mctechnology17
+  projects:
+    - name: zmk
+      remote: zmk
+      revision: main
+    - name: zmk-nice-oled
+      remote: mctechnology17
+      revision: main
+      path: modules/lib/nice-oled
 #manifest:
 #  remotes:
 #    - name: zmkfirmware
