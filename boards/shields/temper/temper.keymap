@@ -225,7 +225,8 @@
         euro: euro_settings {
           compatible = "zmk,behavior-macro";
           #binding-cells = <0>;
-          bindings = <&macro_press &kp RSHFT &kp RALT &kp N2>;  
+          bindings = <&macro_press &kp RSHFT &kp RALT &kp N2>,
+                    <&macro_press &kp N2 &kp RALT &kp RSHFT>;
 
         };
     };
