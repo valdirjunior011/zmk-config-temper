@@ -16,6 +16,7 @@
 #define NUM 1
 #define SYM 2
 #define FUNC 3
+#define WIN 4
 
 #define ______ &trans
 
