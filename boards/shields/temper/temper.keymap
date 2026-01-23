@@ -51,7 +51,7 @@
             tapping-term-ms = <180>;
             bindings = <&kp C>, <&kp LG(C)>;
         };
-        copy__w_dance: tapdance_copy {
+        copy_w_dance: tapdancew_copy {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <180>;
@@ -64,7 +64,7 @@
             tapping-term-ms = <180>;
             bindings = <&kp V>, <&kp LG(V)>;
         };
-        paste_w_dance: tabdance_paste {
+        paste_w_dance: tabdancew_paste {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <180>;
@@ -91,7 +91,7 @@
             tapping-term-ms = <180>;
             bindings = <&kp X>, <&kp LG(X)>;
         };
-        cut_w_dance: tapdance_cut {
+        cut_w_dance: tapdancew_cut {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <180>;
@@ -316,7 +316,7 @@
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
      &bt BT_CLR    &bt BT_NXT    &bt BT_PRV    &bootloader   &sys_reset       &sys_reset    &bootloader    &none         &none         &none
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-       &kp F11       &kp F12    &bt BT_SEL 0   &bt BT_SEL 1  &bt BT_SEL 2       &kp LNLCK     &nomachine    &none         &none         &mo 1
+       &kp F11       &kp F12    &bt BT_SEL 0   &bt BT_SEL 1  &bt BT_SEL 2       &kp LNLCK     &nomachine    &none         &none         &mo 4
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
        &kp F1        &kp F2        &kp F3        &kp F4        &kp F5           &kp F6         &kp F7       &kp F8        &kp F9         &kp F10
 // ╰─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯
