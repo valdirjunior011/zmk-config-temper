@@ -25,6 +25,14 @@
   flavor = "tap-preferred";
 };
 
+lt_any: layer_tap_any {
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <2>;
+    tapping-term-ms = <200>;
+    flavor = "tap-preferred";
+    bindings = <&mo>, <&kp>;
+};
+
 / {
     conditional_layers {
         compatible = "zmk,conditional-layers";
@@ -319,7 +327,7 @@
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
     &caps_dance    &cut_w_dance  &copy_w_dance &paste_w_dance    &kp B           &kp N         &kp M         &kp COMMA     &kp DOT        &kp FSLH
 // ╰─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯
-                                 &tp LALT TAB    &lt NUM DEL    &kp ENTER       &kp SPACE   &lt SYM BSPC   &tp LA(RSHFT) ESC
+                                 &tp LALT TAB  &lt_any NUM DEL  &kp ENTER    &kp SPACE   &lt_any SYM BSPC   &tp LA(RSHFT) ESC
 //                             ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
             >;
         };
