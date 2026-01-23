@@ -117,10 +117,10 @@ layers:
     - {t: ., s: '>'}
     - {t: /, s: '?'}
   - - {t: TAB, h: LALT}
-    - {t: '$$mdi:backspace-reverse-outline$$', h: NUM, type: hold-tap}
+    - '&lt_any 1 DEL'
     - ENTER
     - SPACE
-    - {t: '$$mdi:backspace$$', h: SYM, type: hold-tap}
+    - '&lt_any 2 BSPC'
     - {t: ESC, h: Alt+RSHFT}
 combos:
 - p: [1, 2]

@@ -1064,12 +1064,12 @@ rect.layer-active { stroke: #ff0000; stroke-width: 2; }
 <text x="0" y="0" class="key tap">TAB</text>
 <text x="0" y="24" class="key hold">LALT</text>
 </g>
-<g transform="translate(254, 236) rotate(15.0)" class="key hold-tap keypos-31">
-<rect rx="6" ry="6" x="-28" y="-26" width="55" height="52" class="key hold-tap"/>
-<use href="#mdi:backspace-reverse-outline" xlink:href="#mdi:backspace-reverse-outline" x="-9" y="-9" height="18" width="18.0" class="key hold-tap tap glyph mdi:backspace-reverse-outline"/>
-<a href="#NUM">
-<text x="0" y="24" class="key hold-tap hold layer-activator">NUM</text>
-</a></g>
+<g transform="translate(254, 236) rotate(15.0)" class="key keypos-31">
+<rect rx="6" ry="6" x="-28" y="-26" width="55" height="52" class="key"/>
+<text x="0" y="0" class="key tap">
+<tspan x="0" dy="-1.2em">&amp;lt_any</tspan><tspan x="0" dy="1.2em">1</tspan><tspan x="0" dy="1.2em">DEL</tspan>
+</text>
+</g>
 <g transform="translate(321, 246) rotate(30.0)" class="key keypos-32">
 <rect rx="6" ry="6" x="-26" y="-42" width="52" height="85" class="key"/>
 <text x="0" y="0" class="key tap">ENTER</text>
@@ -1078,12 +1078,12 @@ rect.layer-active { stroke: #ff0000; stroke-width: 2; }
 <rect rx="6" ry="6" x="-26" y="-42" width="52" height="85" class="key"/>
 <text x="0" y="0" class="key tap">SPACE</text>
 </g>
-<g transform="translate(533, 235) rotate(-15.0)" class="key hold-tap keypos-34">
-<rect rx="6" ry="6" x="-28" y="-26" width="55" height="52" class="key hold-tap"/>
-<use href="#mdi:backspace" xlink:href="#mdi:backspace" x="-9" y="-9" height="18" width="18.0" class="key hold-tap tap glyph mdi:backspace"/>
-<a href="#SYM">
-<text x="0" y="24" class="key hold-tap hold layer-activator">SYM</text>
-</a></g>
+<g transform="translate(533, 235) rotate(-15.0)" class="key keypos-34">
+<rect rx="6" ry="6" x="-28" y="-26" width="55" height="52" class="key"/>
+<text x="0" y="0" class="key tap">
+<tspan x="0" dy="-1.2em">&amp;lt_any</tspan><tspan x="0" dy="1.2em">2</tspan><tspan x="0" dy="1.2em">BSPC</tspan>
+</text>
+</g>
 <g transform="translate(599, 228)" class="key keypos-35">
 <rect rx="6" ry="6" x="-28" y="-26" width="55" height="52" class="key"/>
 <text x="0" y="0" class="key tap">ESC</text>
