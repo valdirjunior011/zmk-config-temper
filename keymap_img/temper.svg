@@ -852,9 +852,9 @@ rect.layer-active { stroke: #ff0000; stroke-width: 2; }
 </g>
 <g transform="translate(758, 143)" class="key keypos-19">
 <rect rx="6" ry="6" x="-28" y="-26" width="55" height="52" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.6em">&amp;tg</tspan><tspan x="0" dy="1.2em">4</tspan>
-</text>
+<a href="#WIN">
+<text x="0" y="0" class="key tap layer-activator">WIN</text>
+</a><text x="0" y="24" class="key hold">toggle</text>
 </g>
 <g transform="translate(30, 199)" class="key keypos-20">
 <rect rx="6" ry="6" x="-28" y="-26" width="55" height="52" class="key"/>
