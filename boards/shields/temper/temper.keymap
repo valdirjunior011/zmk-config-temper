@@ -25,14 +25,6 @@
   flavor = "tap-preferred";
 };
 
-lt_any: layer_tap_any {
-    compatible = "zmk,behavior-hold-tap";
-    #binding-cells = <2>;
-    tapping-term-ms = <200>;
-    flavor = "tap-preferred";
-    bindings = <&mo>, <&kp>;
-};
-
 / {
     conditional_layers {
         compatible = "zmk,conditional-layers";
@@ -51,6 +43,13 @@ lt_any: layer_tap_any {
             quick-tap-ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
+        };
+        lt_any: layer_tap_any {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "tap-preferred";
+            bindings = <&mo>, <&kp>;
         };
         // Tap dance single tap = C double tap = gui+c
         copy_dance: tapdance_copy {
