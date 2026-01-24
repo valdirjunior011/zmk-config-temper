@@ -117,10 +117,10 @@ layers:
     - {t: ., s: '>'}
     - {t: /, s: '?'}
   - - {t: TAB, h: LALT}
-    - '&lt_any 1 DEL'
+    - {t: DEL, h: NUM}
     - ENTER
     - SPACE
-    - '&lt_any 2 BSPC'
+    - {t: BSPC, h: SYM}
     - {t: ESC, h: Alt+RSHFT}
 combos:
 - p: [1, 2]
