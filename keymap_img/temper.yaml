@@ -64,7 +64,7 @@ layers:
     - ENTER
     - SPACE
     - {t: '$$mdi:backspace$$', h: SYM, type: hold-tap}
-    - {t: ESC, h: Alt+LSHFT}
+    - {t: ESC, h: alt shift}
   NUM:
   - [Nvim WQ, _, '#', $, '@', +, '7', '8', '9', '*']
   - ['$$mdi:currency-eur$$', '~', '`', '%', '!', '-', '4', '5', '6', /]
