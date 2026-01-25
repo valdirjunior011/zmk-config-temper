@@ -238,7 +238,9 @@
         alt_shift: alt_shift {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LALT &kp RSHFT>;
+            bindings =         
+                <&macro_press   &kp LALT &kp RSHFT>,
+                <&macro_release &kp RSHFT &kp LALT>;
         };
         nomachine: nomachine_settings {
             compatible = "zmk,behavior-macro";
