@@ -600,9 +600,7 @@ rect.layer-active { stroke: #ff0000; stroke-width: 2; }
 </a></g>
 <g transform="translate(599, 228)" class="key keypos-35">
 <rect rx="6" ry="6" x="-28" y="-26" width="55" height="52" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.6em" style="font-size: 64%">&amp;tp</tspan><tspan x="0" dy="1.2em" style="font-size: 64%">alt_shift_…</tspan>
-</text>
+<text x="0" y="0" class="key tap"><tspan style="font-size: 64%">&amp;alt_shift…</tspan></text>
 </g>
 </g>
 </g>
