@@ -235,10 +235,11 @@
             #binding-cells = <0>;
             bindings = <&macro_tap &kp DQT &kp DQT &kp LEFT>;
         };
-        alt_shift: alt_shift {
+        alt_shift_esc: alt_shift {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press &kp LALT &kp RSHFT>,
+            bindings = <&macro_tap &kp ESC>,
+                       <&macro_press &kp LALT &kp RSHFT>,
                        <&macro_release &kp RSHFT &kp LALT>;
         };
         nomachine: nomachine_settings {
@@ -284,7 +285,7 @@
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
     &caps_dance    &cut_w_dance  &copy_w_dance &paste_w_dance    &kp B           &kp N         &kp M         &kp COMMA     &kp DOT        &kp FSLH
 // ╰─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯
-                              &tp LALT TAB  &lt NUM DEL     &kp ENTER       &kp SPACE     &lt SYM BSPC   &tp alt_shift ESC
+                              &tp LALT TAB  &lt NUM DEL     &kp ENTER       &kp SPACE     &lt SYM BSPC   &tp alt_shift_esc
 //                             ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
             >;
         };
