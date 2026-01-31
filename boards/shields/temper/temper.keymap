@@ -122,6 +122,15 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
+        // GlazeVM
+        alt_shift_esc: alt_shift {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp ESC>, <&kp LALT &kp RSHFT>;
+        };
     };
 
     /*                KEY POSITIONS
@@ -234,13 +243,6 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&macro_tap &kp DQT &kp DQT &kp LEFT>;
-        };
-        alt_shift_esc: alt_shift {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_tap &kp ESC>,
-                       <&macro_press &kp LALT &kp RSHFT>,
-                       <&macro_release &kp RSHFT &kp LALT>;
         };
         nomachine: nomachine_settings {
             compatible = "zmk,behavior-macro";
