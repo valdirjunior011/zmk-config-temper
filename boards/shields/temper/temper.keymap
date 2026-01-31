@@ -125,6 +125,7 @@
         // GlazeVM
         alt_shift_esc: alt_shift {
             compatible = "zmk,behavior-hold-tap";
+            label = "ALT_SHIFT_ESC";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             quick-tap-ms = <0>;
