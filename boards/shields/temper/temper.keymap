@@ -248,14 +248,6 @@
                      <&macro_release &kp N2 &kp RALT &kp RSHFT>;
 
         };
-        alt_shift_esc: alt_shift {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_tap &kp ESC>,
-                       <&macro_press &kp LALT &kp LSHIFT>,
-                       <&macro_pause_for_release>,
-                       <&macro_release &kp LSHIFT &kp LALT>;
-        };
     };
 
     keymap {
@@ -267,7 +259,7 @@
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
         &kp Q       &kp W         &kp E          &kp R          &kp T             &kp Y         &kp U         &kp I         &kp O       &app_paste
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-        &kp A       &hm LGUI S   &hm LCTRL D     &hm LSHFT F    &kp G         &search_dance     &hm RSHFT J   &hm RCTRL K   &hm RGUI L    &kp SEMI
+     &hm LALT A     &hm LGUI S   &hm LCTRL D     &hm LSHFT F    &kp G         &search_dance     &hm RSHFT J   &hm RCTRL K   &hm RGUI L  &hm RALT SEMI
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
     &caps_dance    &cut_dance      &copy_dance    &paste_dance    &kp B           &kp N         &kp M         &kp COMMA     &kp DOT       &kp FSLH
 // ╰─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯
@@ -285,7 +277,7 @@
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
     &caps_dance    &cut_w_dance  &copy_w_dance &paste_w_dance    &kp B           &kp N         &kp M         &kp COMMA     &kp DOT        &kp FSLH
 // ╰─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯
-                              &tp LALT TAB  &lt NUM DEL     &kp ENTER       &kp SPACE     &lt SYM BSPC   &alt_shift_esc
+                              &tp LALT TAB  &lt NUM DEL     &kp ENTER       &kp SPACE     &lt SYM BSPC   &tp ESC LALT
 //                             ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
             >;
         };
