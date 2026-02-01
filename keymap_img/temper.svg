@@ -602,8 +602,8 @@ rect.layer-active { stroke: #ff0000; stroke-width: 2; }
 </a></g>
 <g transform="translate(599, 228)" class="key keypos-35">
 <rect rx="6" ry="6" x="-28" y="-26" width="55" height="52" class="key"/>
-<text x="0" y="0" class="key tap">LALT</text>
-<text x="0" y="24" class="key hold">ESC</text>
+<text x="0" y="0" class="key tap">ESC</text>
+<text x="0" y="24" class="key hold">LALT</text>
 </g>
 </g>
 </g>
