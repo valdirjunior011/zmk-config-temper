@@ -11,7 +11,7 @@ layers:
     - I
     - O
     - {t: P, s: '$$mdi:clipboard-check-outline$$'}
-  - - {t: A, h: Alt}
+  - - {t: A, h: '$$mdi:apple-keyboard-option$$'}
     - {t: S, h: '$$mdi:apple-keyboard-command$$'}
     - {t: D, h: '$$mdi:apple-keyboard-control$$'}
     - {t: F, h: '$$mdi:apple-keyboard-shift$$'}
