@@ -47,11 +47,15 @@ parse_config:
     "&hm RSHFT J": { tap: J, hold: $$mdi:apple-keyboard-shift$$ }
     "&hm RCTRL K": { tap: K, hold: $$mdi:apple-keyboard-control$$ }
     "&hm RGUI L": { tap: L, hold: $$mdi:apple-keyboard-command$$ }
+    "&hm LALT A": { tap: A, hold: $$mdi:apple-keyboard-option$$ }
 
     # Tap Dances
     "&copy_dance": { tap: C, shifted: $$mdi:content-copy$$ }
     "&paste_dance": { tap: V, shifted: $$mdi:content-paste$$ }
     "&cut_dance": { tap: X, shifted: $$mdi:content-cut$$ }
+    "&copy_w_dance": { tap: C, shifted: $$mdi:content-copy$$ }
+    "&paste_w_dance": { tap: V, shifted: $$mdi:content-paste$$ }
+    "&cut_w_dance": { tap: X, shifted: $$mdi:content-cut$$ }
     "&dot_spc": { tap: '.', shifted: $$mdi:keyboard-space$$ }
     "&caps_dance": { tap: Z, shifted: $$mdi:apple-keyboard-caps$$ }
     "&app_paste": { tap: P, shifted: $$mdi:clipboard-check-outline$$ }

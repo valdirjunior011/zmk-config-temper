@@ -13,9 +13,11 @@
 #include <dt-bindings/zmk/reset.h>
 
 #define DEFAULT 0
-#define NUM 1
-#define SYM 2
-#define FUNC 3
+#define WIN 1
+#define NUM 2
+#define SYM 3
+#define FUNC 4
+
 
 #define ______ &trans
 
@@ -50,12 +52,24 @@
             tapping-term-ms = <180>;
             bindings = <&kp C>, <&kp LG(C)>;
         };
+        copy_w_dance: tapdancew_copy {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <180>;
+            bindings = <&kp C>, <&kp LC(C)>;
+        };
         // Tap dance single tap = V double tap = gui+v
         paste_dance: tabdance_paste {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <180>;
             bindings = <&kp V>, <&kp LG(V)>;
+        };
+        paste_w_dance: tabdancew_paste {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <180>;
+            bindings = <&kp V>, <&kp LC(V)>;
         };
         // Tap dance single tap = . double tap = SPACE
         dot_spc: dot_space {
@@ -78,6 +92,12 @@
             tapping-term-ms = <180>;
             bindings = <&kp X>, <&kp LG(X)>;
         };
+        cut_w_dance: tapdancew_cut {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <180>;
+            bindings = <&kp X>, <&kp LC(X)>;
+        };
         // Tap dance single tap = P double tap = gui+shift+v
         app_paste: app_paste {
             compatible = "zmk,behavior-tap-dance";
@@ -95,7 +115,6 @@
         // Enable hyper key when tapped
         tp: tap-preferred {
             compatible = "zmk,behavior-hold-tap";
-            label = "TAP-PREFERRED";
             #binding-cells = <2>;
             tapping-term-ms = <150>;
             quick-tap-ms = <0>;
@@ -226,7 +245,7 @@
           compatible = "zmk,behavior-macro";
           #binding-cells = <0>;
           bindings = <&macro_press &kp RSHFT &kp RALT &kp N2>,
-                    <&macro_release &kp N2 &kp RALT &kp RSHFT>;
+                     <&macro_release &kp N2 &kp RALT &kp RSHFT>;
 
         };
     };
@@ -240,11 +259,25 @@
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
         &kp Q       &kp W         &kp E          &kp R          &kp T             &kp Y         &kp U         &kp I         &kp O       &app_paste
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-        &kp A       &hm LGUI S   &hm LCTRL D     &hm LSHFT F    &kp G         &search_dance     &hm RSHFT J   &hm RCTRL K   &hm RGUI L    &kp SEMI
+     &hm LALT A     &hm LGUI S   &hm LCTRL D     &hm LSHFT F    &kp G         &search_dance     &hm RSHFT J   &hm RCTRL K   &hm RGUI L  &hm RALT SEMI
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
     &caps_dance    &cut_dance      &copy_dance    &paste_dance    &kp B           &kp N         &kp M         &kp COMMA     &kp DOT       &kp FSLH
 // ╰─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯
                     &tp LG(LC(LA(LSHFT))) TAB  &lt NUM DEL    &kp ENTER          &kp SPACE   &lt SYM BSPC  &tp LG(LC(LA(LSHFT))) ESC
+//                             ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
+            >;
+        };
+        windows_layer {
+            label = "WIN";
+            bindings = <
+// ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+        &kp Q       &kp W         &kp E          &kp R          &kp T             &kp Y         &kp U         &kp I         &kp O        &kp P
+// ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+        &kp A       &hm LGUI S   &hm LCTRL D     &hm LSHFT F    &kp G           &kp H         &hm RSHFT J   &hm RCTRL K   &hm RGUI L   &kp SEMI
+// ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+    &caps_dance    &cut_w_dance  &copy_w_dance &paste_w_dance    &kp B           &kp N         &kp M         &kp COMMA     &kp DOT        &kp FSLH
+// ╰─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯
+                              &tp LALT TAB  &lt NUM DEL     &kp ENTER       &kp SPACE     &lt SYM BSPC   &tp LALT ESC
 //                             ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
             >;
         };
@@ -276,14 +309,13 @@
 //                             ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
             >;
         };
-
         func_layer {
             label = "FUNC";
             bindings = <
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
      &bt BT_CLR    &bt BT_NXT    &bt BT_PRV    &bootloader   &sys_reset       &sys_reset    &bootloader    &none         &none         &none
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-       &kp F11       &kp F12    &bt BT_SEL 0   &bt BT_SEL 1  &bt BT_SEL 2       &kp LNLCK     &nomachine    &none         &none         &none
+       &kp F11       &kp F12    &bt BT_SEL 0   &bt BT_SEL 1  &bt BT_SEL 2       &kp LNLCK     &nomachine    &none         &none         &tog WIN
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
        &kp F1        &kp F2        &kp F3        &kp F4        &kp F5           &kp F6         &kp F7       &kp F8        &kp F9         &kp F10
 // ╰─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯
