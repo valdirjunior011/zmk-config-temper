@@ -47,6 +47,7 @@ parse_config:
     "&hm RSHFT J": { tap: J, hold: $$mdi:apple-keyboard-shift$$ }
     "&hm RCTRL K": { tap: K, hold: $$mdi:apple-keyboard-control$$ }
     "&hm RGUI L": { tap: L, hold: $$mdi:apple-keyboard-command$$ }
+    "&hm LALT A": { tap: A, hold: Alt }
 
     # Tap Dances
     "&copy_dance": { tap: C, shifted: $$mdi:content-copy$$ }
